@@ -1,18 +1,13 @@
-<!-- 8.  Write a PHP script to print "second" and Red from the following array. 
-         Sample Data : 
-         $color = array ( "color" => array ( "a" => "Red", "b" => "Green", "c" => "White"),
-         "numbers" => array ( 1, 2, 3, 4, 5, 6 ),
-         "holes" => array ( "First", 5 => "Second", "Third")); -->
+<!-- 
+    8. Write a PHP program to compute and return the square root of a given number.
 
-<?php
+    input : 16
+    Output : 4
 
-$color = array(
-    "color" => array("a" => "Red", "b" => "Green", "c" => "White"),
-    "numbers" => array(1, 2, 3, 4, 5, 6),
-    "holes" => array("First", 5 => "Second", 6 => "Third")
-);
+     -->
 
-print_r($color["holes"][5] . "<br />");
-print_r($color["color"]["c"] . "<br />");
-
-?>
+     <?php 
+        $num  = 16;
+        echo "Your Number is : $num". "<br />";
+        echo "By Using Square Root Function your Number is :". sqrt($num);
+     ?>

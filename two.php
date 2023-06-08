@@ -1,18 +1,12 @@
-<!-- 2. Create a script using a for loop to add all the integers between 0 and 30 and display the total  -->
+<!-- 2. Write a PHP program to check wheather to given positive integer is a power of three.
 
+    input : 9
+    Output :
+     9 is power of three
 
-<?php
-$sum = 0;
-$number = 30;
-for ($x = 1; $x <= $number; $x++) {                                                                                                                                                                                                    
-    $sum += $x;
-}
-echo "The sum of the numbers <br> 0 to 30 is <br> $sum" . "<br />";
-?>
+     <?php
+        
+        
+        ?>
 
-<!-- Output :
-
-The sum of the numbers
-0 to 30 is
-465
- -->
+      

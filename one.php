@@ -1,16 +1,23 @@
-<!-- 1. Create a script that displays 1-2-3-4-5-6-7-8-9-10 on one line. There will be on hyphen(-) at starting  and ending position. -->
+<!--
+     1. Write a PHP Programm to check whaether a given positive integer is apower of two
+ 
+    -->
 
 <?php
-$number = 10;
-for ($x = 1; $x <= $number; $x++) {
-    if ($x < $number) {
-        echo "$x-";
+function power_of_two($n)
+{
+    if (($n & ($n - 1)) == 0) {
+        return "$n is power of 2";
     } else {
-        echo "$x" . "\n";
+        return "$n is not power of 2";
     }
 }
+print_r(power_of_two(4) . "<br />");
+print_r(power_of_two(16) . "<br />");
+
 ?>
 
-<!-- Output :
 
-1-2-3-4-5-6-7-8-9-10 -->
+
+<!-- Output -->
+

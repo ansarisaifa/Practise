@@ -1,37 +1,25 @@
 <!-- 
-5. Write a PHP script to calculate and display Average temperature, five lowest and highest temperatures. -->
+    5. Write a PHP program to find a missing number (s) from an array.
 
+    input : 1,2,3,6,7,8
 
-<?php
-$month_temp = "78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 81, 76, 73,
-68, 72, 73, 75, 65, 74, 63, 67, 65, 64, 68, 73, 75, 79, 73";
-$temp_array = explode(',', $month_temp);
-$tot_temp = 0;
-$temp_array_length = count($temp_array);
+   
+ -->
 
+ <?php 
+    function not_present($list)
+    {
+        $new_array = range(min($list), max($list));
 
-foreach ($temp_array as $temp) {
-    $tot_temp += $temp;
-}
-$avg_high_temp = $tot_temp / $temp_array_length;
-echo "Average Temperature is :<br /> " . $avg_high_temp . "<br />";
-sort($temp_array);
-echo " List of five lowest temperatures :<br />";
+        return array_diff($new_array, $list);
+    }
+    print_r(not_present(array(1,2,3,6,7,8)));
+ ?>
 
-for ($i = 0; $i < 5; $i++) {
-    echo $temp_array[$i] . ",";
-}
-echo "<br /> List of five highest temperatures :<br />";
-for ($i = ($temp_array_length - 5); $i < ($temp_array_length); $i++) {
-    echo $temp_array[$i] . ", ";
-}
-
-// Output :
-
-        // Average Temperature is :
-        // 70.6
-        // List of five lowest temperatures :
-        // 60, 62, 63, 63, 64,
-        // List of five highest temperatures :
-        // 76, 78, 79, 81, 85,
-
+<!-- 
+Output : array 
+    (
+        [3] => 4
+        [4] => 5
+    )
+ -->

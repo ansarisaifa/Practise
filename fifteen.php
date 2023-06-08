@@ -1,22 +1,34 @@
-<!-- 15. Write a PHP program to filter out some element with certain key names 
+<!-- 15. Write a PHP program to check wheather a sequence of number is an arithmetic progression or not.
+in mathematics, an arithmetic progression or arithmetic sequence is sequence of numbers
+Such that the difference between the consecutive terms is constant.
 
-    Test Data :
+input : Array (5,7,9,11)
+Output : An Arithmetic Sequence
 
-    1st Array : ('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 'Black')
-    2nd Array : ('c2', 'c4')
+For example, the sequence 5, 7, 9, 11, 13, 15 ... is an arithmetic progression with common difference of 2.
+ -->
 
-    Output :
-    Array 
-    (
-        [c2] => Green
-        [c4] => Black
-    ) -->
+<?php
+function is_arithmetic($arr)
+{
+    $delta = $arr[1] - $arr[0];
 
-    <?php 
-    $a1 = array('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 'Black');
-    $a2 = array('c1', 'c3');
+    for ($index = 0; $index < sizeof($arr) - 1; $index++) {
 
-    $result = array_diff_key( $a1, array_flip( $a2));
-    print_r($result);
+        if (($arr[$index + 1] - $arr[$index]) != $delta) {
 
-    ?>
+
+            return "Not An Arithmetic Sequence";
+        }
+    }
+    return "An Arithmetic Sequence";
+}
+
+$my_arr1 = array(5,7,9,11);
+$my_arr2 = array(6,7,9,11);
+
+
+print_r(is_arithmetic($my_arr1) . "<br />");
+print_r(is_arithmetic($my_arr2) . "<br />");
+
+?>

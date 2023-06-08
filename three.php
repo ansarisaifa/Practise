@@ -1,27 +1,20 @@
-<!-- 3.$ceu = array( "Italy"=>"Rome", "Luxembourg"=>"Luxembourg", "Belgium"=> "Brussels", "Denmark"=>"Copenhagen", "Finland"=>"Helsinki", "France" => "Paris", "Slovakia"=>"Bratislava", "Slovenia"=>"Ljubljana", "Germany" => "Berlin", "Greece" => "Athens", "Ireland"=>"Dublin", "Netherlands"=>"Amsterdam", "Portugal"=>"Lisbon", "Spain"=>"Madrid", "Sweden"=>"Stockholm", "United Kingdom"=>"London", "Cyprus"=>"Nicosia", "Lithuania"=>"Vilnius", "Czech Republic"=>"Prague", "Estonia"=>"Tallin", "Hungary"=>"Budapest", "Latvia"=>"Riga", "Malta"=>"Valetta", "Austria" => "Vienna", "Poland"=>"Warsaw") ;
+<!-- 3 . Write a PHP program to check wheather a given positive integer is a power of four 
+    input : 4
+    Output : 4 is power of four
 
-Create a PHP script which displays the capital and country name from the above array $ceu. Sort the list by the name of the capital. -->
+     -->
 
-<?php
-$ceu = array(
-    "Germany" => "Berlin",
-    "Greece" => "Athens",
-    "Netherlands" => "Amsterdam"
-);
+     <?php 
+        function power_of_four($n){
+            if (($n & ($n - 1)) == 0) {
+                return "$n is power of 4";
+            } else {
+                return "$n is not power of 4";
+            }
+        }
+        print_r(power_of_four(4) . "<br />");
+        print_r(power_of_four(64) . "<br />");
+     ?>
 
-asort($ceu);
-foreach ($ceu as $country => $capital) {
-
-    echo "The capital of $country is $capital" . "<br / >";
-}
-?>
-
-<!-- 
-    
-Output :
-
-The capital of Netherlands is Amsterdam
-The capital of Greece is Athens
-The capital of Germany is Berlin
-
--->
+<!-- input : 4
+    Output : 4 is power of four -->

@@ -1,28 +1,31 @@
-<!-- 11. Write a PHP script to count the total number of times a specific value appears in an array. -->
+<!-- 11. Write a PHP program to find the single element appears once in an array  where every element appears twice exept for me.
+
+input : Array(5, 3, 0, 3, 0, 5, 7, 7, 9)
+
+Output : 9 -->
 
 <?php
 
-function count_array_values($my_array, $match)
+
+function findSingle($arr, $arr_size)
 {
-    $count = 0;
+    // elements and return
 
-    foreach ($my_array as $key => $value) {
-        if ($value == $match) {
-            $count++;
-        }
-    }
+    $res = $arr[0];
 
-    return $count;
+    for ($i = 1; $i < $arr_size; $i++)
+
+        $res = $res ^ $arr[$i];
+
+    return $res;
 }
 
-$colors = array("c1" => "Red", "c2" => "Green", "c3" => "Yellow", "c4" => "Red");
+// Driver code
 
-echo "\n" . "Red color appears " . count_array_values($colors, "Red") . " time(s)." . "\n";
+$arr = array(5, 3, 0, 3, 0, 5, 7, 7, 9);
+
+$n = count($arr);
+
+echo "Single Number is ", findSingle($arr, $n);
+
 ?>
-
-<!-- 
-Output :
-
-Red color appears 2 time(s). 
-
--->

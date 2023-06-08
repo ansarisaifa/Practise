@@ -1,27 +1,53 @@
-<!-- 10. Write a PHP script lowercase and uppercase. all in an array. -->
+<!-- 10. Write a PHP program to find single element in an array where every element appears three times except for me.
 
+input array : (5,3,4,3,5,5,3)
+
+Output Array:
+(
+    [0] => 5
+    [1] => 3
+    [2] => 4
+    [3] => 3
+    [4] => 5
+    [5] => 5
+    [6] => 3
+
+) -->
 <?php
+// PHP code to find the element
 
-// Declare an array
+$INT_SIZE= 32;
 
-$arr = array(
-    'E', 'Ez',
-    'Eze', 'Ezee'
-);
+function getSingle($arr, $n)
+{
+	global $INT_SIZE;
+	
+	// Initialize result
+	$result = 0;
+	
+	for ($i = 0; $i < $INT_SIZE; $i++)
+	{
+	// Find sum of set bits at ith
+	// position in all array elements
 
-$j = 0;
+	$sum = 0;
+	$x = (1 << $i);
+	for ($j = 0; $j < $n; $j++ )
+	{
+		if ($arr[$j] & $x)
+			$sum++;
+	}
 
-// overwriting the original array
+	if (($sum % 3) !=0 )
+		$result |= $x;
+	}
 
-foreach ($arr as $element) {
-    $arr[$j] = strtoupper($element);
-
-    $j++;
+	return $result;
 }
 
-// Display the content of array
+$arr = array (5, 3, 4, 3, 5, 5, 3);
+$n = sizeof($arr);
 
-foreach ($arr as $element)
-    echo $element . "<br />";
-
+echo "The Element with Single Number is :",getSingle($arr, $n);
 ?>
+

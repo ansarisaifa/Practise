@@ -1,23 +1,26 @@
-<!-- 6. Write a PHP script which display all the number between 200 to 250 that are divisible by 4  -->
+<!-- 
+    6. Write a PHP program to three numbers from an array such that the sum of three consecutive number equals to zero.
+    input : (-1,0,1,2,-1,-4)
 
-<?php
-//  echo implode(",",range(200,250,4))."<br \>";
-$number = 250;
-for ($i = 200; $i <= $number; $i++) {
-    if ($i % 4 == 0) {
-        if ($i <= $i) {
-            echo $i . ',';
-        } else {
-            echo $i;
-        }
+ -->
+
+ <?php 
+    $arr= array(-1,0,1);
+    $sum = 0;
+
+    for($i=0; $i< count($arr);$i++)
+    {
+        $sum = $sum + $arr[$i];
     }
-}
-?>
 
-<!--  
-    
-Output :
+    print_r("Sum of the element of an array is -1+0+1 = :".$sum);
 
-200,204,208,212,216,220,224,228,232,236,240,244,248 
+ ?>
 
--->
+<!--
+     Output : Array 
+    (
+        [0] => -1+0+1 = 0
+    )
+ -->
+
