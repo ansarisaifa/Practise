@@ -1,17 +1,28 @@
-<!-- 11. Write a PHP Program which iterates the integer from 1 to 150  for multiples of three print "fizz" instead of number and for the multiples of five print "BUZZ".
-    For numbers which are multiples of both three and five print "FizzBuzz". -->
+<!-- 11. Write a PHP script to count the total number of times a specific value appears in an array. -->
 
 <?php
-$number = 150;
-for ($i = 1; $i <= $number; $i++) {
-    if ($i % 3 == 0 && $i % 5 == 0) {
-        echo $i . " FizzBuzz" . "\n";
-    } else if ($i % 3 == 0) {
-        echo $i . " Fizz" . "\n";
-    } else if ($i % 5 == 0) {
-        echo $i . " Buzz" . "\n";
-    } else {
-        echo $i . "<br />";
+
+function count_array_values($my_array, $match)
+{
+    $count = 0;
+
+    foreach ($my_array as $key => $value) {
+        if ($value == $match) {
+            $count++;
+        }
     }
+
+    return $count;
 }
+
+$colors = array("c1" => "Red", "c2" => "Green", "c3" => "Yellow", "c4" => "Red");
+
+echo "\n" . "Red color appears " . count_array_values($colors, "Red") . " time(s)." . "\n";
 ?>
+
+<!-- 
+Output :
+
+Red color appears 2 time(s). 
+
+-->

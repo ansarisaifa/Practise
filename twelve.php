@@ -1,25 +1,22 @@
-<!-- 12. Write a PHP program to generate and display the first n lines of a floyd triangle (use n=5 and n=11 rows).
-    According to wikipedia floyd's triangle is a right-angled traingular array of natural numbers used in computer science education.
-    it is named after Robert Floyd's triangle with consecutive numbers,starting with a 1 in the top left corner. -->
+<!-- 12. Write a PHP program to remove duplicate values from an array which contains only strings or only integers -->
 
 <?php
-$number = 1;
-for ($i = 1; $i <= 5; $i++) {
-    for ($j = 1; $j <= $i; $j++) {
-        echo $number . "&nbsp;";
-        $number++;
-        if ($j == $i) {
-            echo "&nbsp;";
-            echo "<br/>";
-        }
-    }
-}
+$colors = array( 0 => "Red", 1 => "Green", 2 => "White", 3 => "Black", 4 => "Red");
+    
+$numbers = array(0 => 100, 1 => 200, 3 => 300, 4 => 400, 5 => 500);
+
+        $uniq_colors = array_keys(array_flip($colors));
+
+        $uniq_numbers = array_keys(array_flip($numbers));
+
+        print_r($uniq_colors);
+
+        print_r($uniq_numbers);
 ?>
 
-<!-- Output :
+<!-- 
+Output : 
 
-1  
-2 3  
-4 5 6  
-7 8 9 10  
-11 12 13 14 15   -->
+Array ( [0] => Red [1] => Green [2] => White [3] => Black ) Array ( [0] => 100 [1] => 200 [2] => 300 [3] => 400 [4] => 500 )
+
+-->

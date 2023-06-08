@@ -1,17 +1,27 @@
-<!-- 10. Write a PHP script that crates the following table (use for loops). -->
+<!-- 10. Write a PHP script lowercase and uppercase. all in an array. -->
 
 <?php
 
-echo "<table border =\"1\" style='border-collapse: collapse'>";
+// Declare an array
 
-for ($row = 1; $row <= 10; $row++) {
-    echo "<tr> \n";
-    for ($col = 1; $col <= 10; $col++) {
-        $p = $col * $row;
-        echo "<td>$p</td> \n";
-    }
-    echo "</tr>";
+$arr = array(
+    'E', 'Ez',
+    'Eze', 'Ezee'
+);
+
+$j = 0;
+
+// overwriting the original array
+
+foreach ($arr as $element) {
+    $arr[$j] = strtoupper($element);
+
+    $j++;
 }
-echo "</table>";
+
+// Display the content of array
+
+foreach ($arr as $element)
+    echo $element . "<br />";
 
 ?>

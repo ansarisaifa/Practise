@@ -1,29 +1,37 @@
-<!-- 4. Crate a Script to construct the following pattern, using a nested or loop. -->
+
+<!-- 4. Write a PHP script that inserts a new item in any array in any poition 
+   Expected Output
+   Original array:
+   1 2 3 4 5
+   After Inserting '$' the array is : 
+   1 2 3 $ 4 5  -->
+   
+
 
 <?php
-$number = 5;
-for ($i = 1; $i <= $number; $i++) {
-    for ($j = 1; $j <= $i; $j++) {
-        echo ' * ';
-    }
-    echo '<br>';
+$original = array('1', '2', '3', '4', '5');
+echo 'Original array : ' . "<br />";
+foreach ($original as $x) {
+    echo "$x ";
 }
-for ($i = $number; $i >= 1; $i--) {
-    for ($j = 1; $j <= $i; $j++) {
-        echo ' * ';
-    }
-    echo '<br>';
+$inserted = '$';
+
+array_splice($original, 3, 0, $inserted);
+
+echo " <br \> After inserting '$' the array is : " . "<br \>";
+foreach ($original as $x) {
+    echo "$x ";
 }
+echo "<br>"
+?>
 
-// Output : 
+<!-- 
+    
+Output :
 
-//      *
-//      * *
-//      * * *
-//      * * * *
-//      * * * * *
-//      * * * * *
-//      * * * *
-//      * * *
-//      * *
-//      *
+Original array :
+1 2 3 4 5
+After inserting '$' the array is :
+1 2 3 $ 4 5 
+
+-->

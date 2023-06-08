@@ -1,10 +1,23 @@
-<!-- 6. Write a program which will give you all o the potential combinations of a two digits decimal combination, printed in a comma delimited format : -->
+<!-- 6. Write a PHP script which display all the number between 200 to 250 that are divisible by 4  -->
 
 <?php
-for ($a = 0; $a < 10; $a++) {
-    for ($b = 0; $b < 10; $b++) {
-        echo $a . $b . ", ";
+//  echo implode(",",range(200,250,4))."<br \>";
+$number = 250;
+for ($i = 200; $i <= $number; $i++) {
+    if ($i % 4 == 0) {
+        if ($i <= $i) {
+            echo $i . ',';
+        } else {
+            echo $i;
+        }
     }
 }
-printf("\n");
 ?>
+
+<!--  
+    
+Output :
+
+200,204,208,212,216,220,224,228,232,236,240,244,248 
+
+-->

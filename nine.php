@@ -1,33 +1,22 @@
-<!-- 9. Write a PHP Script using nested or loop that creates a chess board as shown below.
-   Use table width ="270px" and take 30px as cell height and width. -->
+<!-- 9. Write a PHP script to trim all the element in an array using array_walk function. -->
 
-<!DOCTYPE html>
-<html>
+<?php 
+function myfunction($value, $key){
+    echo "The key $key has the value $value<br>";
+}
+$a = array("a" => "Red", "b" => "green" , "c" => "blue" , 'd' => 'purple');
+array_walk($a,"myfunction");
+?>
 
-<head>
-    <title></title>
+<!-- 
+Output :
 
-</head>
+The key a has the value Red
+The key b has the value green
+The key c has the value blue
 
-<body>
-    <h3>Chess Board using Nested For Loop</h3>
-    <table width="270px" cellspacing="0px" cellpadding="0px" border="1px">
-        <!-- cell 270px wide (8 columns x 60px) -->
-        <?php
-        for ($row = 1; $row <= 8; $row++) {
-            echo "<tr>";
-            for ($col = 1; $col <= 8; $col++) {
-                $total = $row + $col;
-                if ($total % 2 == 0) {
-                    echo "<td height=30px width=30px bgcolor=black></td>";
-                } else {
-                    echo "<td height=30px width=30px bgcolor=white></td>";
-                }
-            }
-            echo "</tr>";
-        }
-        ?>
-    </table>
-</body>
+-->
 
-</html>
+
+
+

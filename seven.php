@@ -1,13 +1,6 @@
-<!-- 7. Write a program which will count THE 'r' character in the next "w3resource". -->
+<!-- 
+    7. Write a PHP Script to get the shortest/longest string length from an array sample arrays : ("abcd","abc","de","bjjj","g","wer").
+ -->
 
-<?php
-$text = "w3resource";
-$search_char = "r";
-$count = "0";
-for ($x = "0"; $x < strlen($text); $x++) {
-    if (substr($text, $x, 1) == $search_char) {
-        $count = $count + 1;
-    }
-}
-echo $count . "\n";
-?>
+
+

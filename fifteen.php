@@ -1,25 +1,22 @@
-<!-- 15. Create a PHP program to print alphabet pattern in "Y" -->
+<!-- 15. Write a PHP program to filter out some element with certain key names 
 
-<?php
-$number = 7;
-for ($i = 0; $i < $number; $i++) {
-    for ($j = 0; $j <= $number; $j++) {
-        if ((($j == 1 or $j == 5) and $i < 2) or $i == $j and $j > 0 and $j < 4 or ($j == 4 and $i == 2) or (($j == 3) and $i > 3))
-            echo "*";
-        else
-            echo "&nbsp ";
-    }
-    echo "<br>";
-}
-?>
-<!-- 
-Output
+    Test Data :
 
-*    *
-*    *
- *  *
-   *
-   *
-   *
-   *
- -->
+    1st Array : ('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 'Black')
+    2nd Array : ('c2', 'c4')
+
+    Output :
+    Array 
+    (
+        [c2] => Green
+        [c4] => Black
+    ) -->
+
+    <?php 
+    $a1 = array('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 'Black');
+    $a2 = array('c1', 'c3');
+
+    $result = array_diff_key( $a1, array_flip( $a2));
+    print_r($result);
+
+    ?>

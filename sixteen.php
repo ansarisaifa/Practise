@@ -1,27 +1,25 @@
-<!-- 16. Write a PHP program to print alphabet pattern Z. -->
-
-<?php
-$number = 7;
-for ($row = 0; $row < $number; $row++) {
-    for ($column = 0; $column <= $number; $column++) {
-        if ((($row == 0 or $row == 6) and $column >= 0 and $column <= 6) or $row + $column == 6)
-            echo "*";
-        else
-            echo "&nbsp ";
-    }
-    echo "<br>";
-}
-?>
-
-<!-- Output 
-
-*******
-      *
-     *
-    *
-   *
-  *
- *
-*******
+<!-- 
+    
+16. Write a PHP script to remove all white spaces in an array.
 
 -->
+
+<?php
+
+// Create an array with whitespace
+$arr = array("Roman  ", "Sohan   ", "Shaina","<br />");
+
+//print original array
+echo "Original Array:<br /><br />";
+
+foreach ($arr as $key => $value)
+    print($arr[$key] );
+
+// array_walk($arr, create_function('&$val',
+//                 '$val = trim($val);'));
+
+// Print modify array
+echo "\nModified Array:.<br />";
+foreach ($arr as $key => $value)
+    print_r($arr[$key] );
+?>
